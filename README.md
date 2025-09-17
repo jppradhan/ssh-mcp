@@ -41,7 +41,7 @@ The server exposes two main tools: `ssh_execute` and `ssh_connections`
 
 ### ssh_execute
 
-Execute a command on a remote server via SSH with persistent connections, just like using `ssh -A pradhan@dev234`.
+Execute a command on a remote server via SSH with persistent connections, just like using `ssh -A username@hostname`.
 
 **Key Benefits of Persistent Connections:**
 - First command to a server establishes the connection
