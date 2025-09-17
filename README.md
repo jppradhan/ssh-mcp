@@ -1,4 +1,4 @@
-# Meraki SSH MCP Server
+# SSH MCP Server
 
 A Model Context Protocol (MCP) server that enables SSH remote command execution on remote machines with **persistent connections**. This server provides a secure way to connect to remote servers, execute commands, and retrieve output through the MCP protocol while maintaining long-lived SSH sessions for improved performance.
 
@@ -22,7 +22,7 @@ A Model Context Protocol (MCP) server that enables SSH remote command execution 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd meraki-ssh-mcp
+cd ssh-mcp
 ```
 
 2. Install dependencies:
@@ -82,7 +82,7 @@ Manage and monitor SSH connections in the connection pool.
 // Close a specific connection
 {
   "action": "close",
-  "connectionKey": "pradhan@dev234.meraki.com:22"
+  "connectionKey": "username@host:22"
 }
 
 // Close all connections
@@ -138,9 +138,9 @@ Add this to your Claude Desktop configuration:
 ```json
 {
   "mcpServers": {
-    "meraki-ssh-mcp": {
+    "ssh-mcp": {
       "command": "node",
-      "args": ["/absolute/path/to/meraki-ssh-mcp/build/index.js"]
+      "args": ["/absolute/path/to/ssh-mcp/build/index.js"]
     }
   }
 }

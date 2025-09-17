@@ -220,7 +220,7 @@ function loadPrivateKey(keyPath: string): string {
 
 // Create the MCP server
 const server = new McpServer({
-  name: "meraki-ssh-mcp",
+  name: "ssh-mcp",
   version: "1.0.0"
 }, {
   capabilities: {
@@ -450,7 +450,7 @@ async function main() {
   });
 
   await server.connect(transport);
-  console.error("Meraki SSH MCP Server running on stdio with persistent connections");
+  console.error("SSH MCP Server running on stdio with persistent connections");
 }
 
 main().catch((error) => {

@@ -1,11 +1,11 @@
 {
-  "name": "meraki-ssh-mcp",
+  "name": "ssh-mcp",
   "version": "1.0.0",
   "description": "MCP server for SSH remote command execution",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "meraki-ssh-mcp": "./build/index.js"
+    "ssh-mcp": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && chmod +x build/index.js",
