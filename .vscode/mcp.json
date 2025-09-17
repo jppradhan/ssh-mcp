@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "meraki-ssh-mcp": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/Users/jpradha2/workspace/meraki-ssh-mcp/build/index.js"]
+    }
+  }
+}
