@@ -13,7 +13,7 @@ import * as os from 'os';
 const SSHExecuteSchema = z.object({
   host: z.string().describe("SSH server hostname or IP address (e.g., 'dev234' or '192.168.1.100')"),
   port: z.number().default(22).describe("SSH server port (default: 22)"),
-  username: z.string().describe("SSH username (e.g., 'pradhan')"),
+  username: z.string().describe("SSH username (e.g., 'username')"),
   password: z.string().optional().describe("SSH password (only if not using SSH keys)"),
   privateKeyPath: z.string().optional().describe("Path to SSH private key file (default: ~/.ssh/id_rsa, ~/.ssh/id_ed25519, etc.)"),
   passphrase: z.string().optional().describe("Passphrase for the private key (if required)"),

@@ -19,6 +19,14 @@ A Model Context Protocol (MCP) server that enables SSH remote command execution 
 
 ## Installation
 
+### From npm (Recommended)
+
+```bash
+npm install -g ssh-mcp
+```
+
+### From source
+
 1. Clone the repository:
 ```bash
 git clone <repository-url>
@@ -52,7 +60,7 @@ Execute a command on a remote server via SSH with persistent connections, just l
 
 **Parameters:**
 - `host` (string): SSH server hostname or IP address (e.g., 'dev234', '192.168.1.100')
-- `username` (string): SSH username (e.g., 'pradhan')
+- `username` (string): SSH username (e.g., 'username')
 - `command` (string): Command to execute on the remote server
 - `port` (number, optional): SSH server port (default: 22)
 - `privateKeyPath` (string, optional): Path to SSH private key file (default: auto-discovered from ~/.ssh/)
@@ -100,18 +108,18 @@ Manage and monitor SSH connections in the connection pool.
 
 **Simple Usage Examples for ssh_execute:**
 ```javascript
-// Basic command execution (like: ssh pradhan@dev234 'ls -la')
+// Basic command execution (like: ssh username@host 'ls -la')
 // First run establishes connection, subsequent runs reuse it
 {
-  "host": "dev234",
-  "username": "pradhan", 
+  "host": "host",
+  "username": "username", 
   "command": "ls -la"
 }
 
 // Second command on same server (reuses connection - much faster!)
 {
-  "host": "dev234",
-  "username": "pradhan", 
+  "host": "host",
+  "username": "username", 
   "command": "pwd"
 }
 
@@ -178,6 +186,42 @@ The server provides comprehensive error handling:
 - Network connectivity issues
 
 All errors are reported back through the MCP protocol with appropriate error messages.
+
+## Publishing and Releases
+
+This package is automatically published to npm when new releases are created on GitHub. 
+
+### For Maintainers
+
+To publish a new version:
+
+1. Update the version in `package.json`:
+   ```bash
+   npm version patch|minor|major
+   ```
+
+2. Push the changes and tags:
+   ```bash
+   git push origin main --tags
+   ```
+
+3. Create a release on GitHub:
+   - Go to the repository's releases page
+   - Click "Create a new release"
+   - Select the tag you just pushed
+   - Add release notes describing the changes
+   - Publish the release
+
+4. The GitHub Action will automatically:
+   - Build the project
+   - Run tests (if available)
+   - Publish to npm with provenance
+
+### Setup Requirements
+
+The npm publishing workflow requires:
+- An `NPM_TOKEN` secret in the GitHub repository settings
+- The token should have publish permissions for the package
 
 ## License
 
