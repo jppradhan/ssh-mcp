@@ -220,7 +220,7 @@ function loadPrivateKey(keyPath: string): string {
 
 // Create the MCP server
 const server = new McpServer({
-  name: "ssh-mcp",
+  name: "@alolite/ssh-mcp",
   version: "1.0.0"
 }, {
   capabilities: {
