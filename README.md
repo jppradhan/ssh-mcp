@@ -22,7 +22,7 @@ A Model Context Protocol (MCP) server that enables SSH remote command execution 
 ### From npm (Recommended)
 
 ```bash
-npm install -g ssh-mcp
+npm install -g @lite/ssh-mcp
 ```
 
 ### From source
@@ -146,7 +146,7 @@ Add this to your Claude Desktop configuration:
 ```json
 {
   "mcpServers": {
-    "ssh-mcp": {
+    "lite-ssh-mcp": {
       "command": "node",
       "args": ["/absolute/path/to/ssh-mcp/build/index.js"]
     }

@@ -1,11 +1,11 @@
 {
-  "name": "ssh-mcp",
-  "version": "1.0.0",
+  "name": "@lite/ssh-mcp",
+  "version": "1.0.1",
   "description": "MCP server for SSH remote command execution",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "ssh-mcp": "./build/index.js"
+    "@lite/ssh-mcp": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && chmod +x build/index.js",
