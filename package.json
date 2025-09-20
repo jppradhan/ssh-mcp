@@ -1,11 +1,11 @@
 {
-  "name": "@lite/ssh-mcp",
+  "name": "@alolite/ssh-mcp",
   "version": "1.0.1",
   "description": "MCP server for SSH remote command execution",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "@lite/ssh-mcp": "./build/index.js"
+    "@alolite/ssh-mcp": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && chmod +x build/index.js",
