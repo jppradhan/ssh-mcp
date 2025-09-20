@@ -141,14 +141,14 @@ Manage and monitor SSH connections in the connection pool.
 
 ### Example Configuration for Claude Desktop
 
-Add this to your Claude Desktop configuration:
+Add this to your VSCode configuration:
 
 ```json
 {
-  "mcpServers": {
+  "servers": {
     "alolite-ssh-mcp": {
-      "command": "node",
-      "args": ["/absolute/path/to/ssh-mcp/build/index.js"]
+      "command": "npx",
+      "args": ["-y", "alolite-ssh-mcp", "@alolite/ssh-mcp"]
     }
   }
 }
@@ -160,68 +160,6 @@ Add this to your Claude Desktop configuration:
 - **Command Execution**: The server can execute arbitrary commands on remote systems. Ensure proper access controls.
 - **Network Security**: SSH connections are encrypted, but ensure you're connecting to trusted hosts.
 - **Logging**: Sensitive information like passwords are not logged, but command output may contain sensitive data.
-
-## Development
-
-For development, you can run the server directly with TypeScript:
-
-```bash
-npm run dev
-```
-
-## Testing
-
-You can test the server using the MCP Inspector:
-
-```bash
-npx @modelcontextprotocol/inspector node build/index.js
-```
-
-## Error Handling
-
-The server provides comprehensive error handling:
-- Connection timeouts
-- Authentication failures
-- Command execution errors
-- Network connectivity issues
-
-All errors are reported back through the MCP protocol with appropriate error messages.
-
-## Publishing and Releases
-
-This package is automatically published to npm when new releases are created on GitHub. 
-
-### For Maintainers
-
-To publish a new version:
-
-1. Update the version in `package.json`:
-   ```bash
-   npm version patch|minor|major
-   ```
-
-2. Push the changes and tags:
-   ```bash
-   git push origin main --tags
-   ```
-
-3. Create a release on GitHub:
-   - Go to the repository's releases page
-   - Click "Create a new release"
-   - Select the tag you just pushed
-   - Add release notes describing the changes
-   - Publish the release
-
-4. The GitHub Action will automatically:
-   - Build the project
-   - Run tests (if available)
-   - Publish to npm with provenance
-
-### Setup Requirements
-
-The npm publishing workflow requires:
-- An `NPM_TOKEN` secret in the GitHub repository settings
-- The token should have publish permissions for the package
 
 ## License
 
