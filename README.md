@@ -1,4 +1,4 @@
-# SSH MCP Server
+# Alolite SSH MCP Server
 
 A Model Context Protocol (MCP) server that enables SSH remote command execution on remote machines with **persistent connections**. This server provides a secure way to connect to remote servers, execute commands, and retrieve output through the MCP protocol while maintaining long-lived SSH sessions for improved performance.
 
